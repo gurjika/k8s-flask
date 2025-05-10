@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: k8s-flask-app
+spec:
+  selector:
+    matchLabels:
+      app: k8s-flask-app
+  template:
+    metadata:
+      labels:
+        app: k8s-flask-app
+    spec:
+      containers:
+      - name: k8s-flask-app
+        image: gurjika/k8s-flask-app:latest
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 5000
