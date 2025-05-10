@@ -3,6 +3,7 @@ kind: Deployment
 metadata:
   name: k8s-flask-app
 spec:
+  replicas: 4
   selector:
     matchLabels:
       app: k8s-flask-app
